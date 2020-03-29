@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Valor (R$)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car: ${cars}">
+                <td th:text="${car.value.codigo}"></td>
+                <td th:text="${car.value.marca}"></td>
+                <td th:text="${car.value.modelo}"></td>
+                <td th:text="${car.value.cor}"></td>
+                <td th:text="${car.value.preco}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
