@@ -18,11 +18,11 @@
         </thead>
         <tbody>
             <tr th:each="car: ${cars}">
-                <td th:text="${car.value.codigo}"></td>
-                <td th:text="${car.value.marca}"></td>
-                <td th:text="${car.value.modelo}"></td>
-                <td th:text="${car.value.cor}"></td>
-                <td th:text="${car.value.preco}"></td>
+                <td th:text="${car.codigo}"></td>
+                <td th:text="${car.marca}"></td>
+                <td th:text="${car.modelo}"></td>
+                <td th:text="${car.cor}"></td>
+                <td th:text="${car.preco}"></td>
             </tr>
         </tbody>
     </table>

@@ -11,9 +11,10 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class CarRepository {
-    public HashMap<Integer,Car> hm = new HashMap<>();
-    
-    public CarRepository(){
+
+    public HashMap<Integer, Car> hm = new HashMap<>();
+
+    public CarRepository() {
         hm.put(1, new Car(1, "Volvo", "XC 60", "Branca", 250000));
         hm.put(2, new Car(2, "Volvo", "XC 60", "Chumbo", 255000));
         hm.put(3, new Car(3, "Honda", "Civic", "Branca", 65000));
@@ -21,11 +22,11 @@ public class CarRepository {
         hm.put(5, new Car(5, "Fiat", "Uno", "Branca", 50000));
     }
 
-    public Car getCarById(int id){
+    public Car getCarById(int id) {
         return hm.get(id);
     }
 
-    public HashMap<Integer,Car> getCars(){
+    public HashMap<Integer, Car> getCars() {
         return hm;
     }
 }

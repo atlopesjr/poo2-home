@@ -1,8 +1,5 @@
 package com.example.poo2presenca23032020.controller;
 
-import java.util.HashMap;
-
-import com.example.poo2presenca23032020.model.Car;
 import com.example.poo2presenca23032020.service.CarService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,21 +20,16 @@ public class CarController {
 
     @GetMapping("")
     public ModelAndView getCars() {
-        HashMap<Integer, Car> cars = cs.getCars();
         ModelAndView mv = new ModelAndView("cars");
-
-        mv.addObject("cars", cars);
+        mv.addObject("cars", cs.getCars());
         return mv;
     }
 
     @GetMapping("/{carId}")
     public ModelAndView getCarById(@PathVariable("carId") int id) {
-        Car car = cs.getCarById(id);
         ModelAndView mv = new ModelAndView("car-id");
-
-        mv.addObject("car", car);
+        mv.addObject("car", cs.getCarById(id));
         return mv;
     }
-    
 
 }
