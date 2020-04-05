@@ -16,7 +16,9 @@ public class BookRepository {
     public List<Book> bl = new ArrayList<>();
 
     public void insertBook(Book book){
-        bl.add(book);
+        if(book != null){
+            bl.add(book);
+        }
     }
 
     public List<Book> getBooks() {

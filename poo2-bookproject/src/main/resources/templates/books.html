@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Books</title>
 </head>
 <body>
     <div id="book-form">
         <form th:action="@{/book}" method="POST">
             <input type="hidden" name="codigo" value="0"><br /><br />
             <label>Título</label>
-            <input type="text" name="titulo"><br /><br />
+            <input type="text" name="titulo" required><br /><br />
             <label>Gênero</label>
-            <input type="text" name="genero"><br /><br />
+            <input type="text" name="genero" required><br /><br />
             <label>Autor(a)</label>
-            <input type="text" name="autor"><br /><br />
+            <input type="text" name="autor" required><br /><br />
             <label>Preço</label>
-            <input type="text" name="preco"><br /><br />
+            <input type="number" name="preco" required><br /><br />
             <input type="submit" value="Cadastrar">
         </form>
     </div>
@@ -28,7 +28,7 @@
                     <th scope="col">Título</th>
                     <th scope="col">Gênero</th>
                     <th scope="col">Autor(a)</th>
-                    <th scope="col">Valor (R$)</th>
+                    <th scope="col">Valor</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +37,7 @@
                     <td th:text="${book.titulo}"></td>
                     <td th:text="${book.genero}"></td>
                     <td th:text="${book.autor}"></td>
-                    <td th:text="${book.preco}"></td>
+                    <td th:text="'R$ ' + ${book.preco}"></td>
                 </tr>
             </tbody>
         </table>

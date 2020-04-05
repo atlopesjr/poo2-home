@@ -24,7 +24,13 @@ public class BookService {
     }
 
     public void insertBook(Book book){
-        br.insertBook(book);
+        book.setCodigo(br.getBooks().size()+1);
+        //Verifica Valor
+        if(book.getPreco() < 1){
+            book = null;
+        } else {
+            br.insertBook(book);
+        }
     }
 
 }
