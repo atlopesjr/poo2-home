@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Título</th>
+                <th scope="col">Gênero</th>
+                <th scope="col">Autor(a)</th>
+                <th scope="col">Valor (R$)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="book: ${books}">
+                <td th:text="${book.codigo}"></td>
+                <td th:text="${book.titulo}"></td>
+                <td th:text="${book.genero}"></td>
+                <td th:text="${book.autor}"></td>
+                <td th:text="${book.preco}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
