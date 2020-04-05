@@ -1,6 +1,7 @@
 package com.example.poo2bookproject.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.example.poo2bookproject.model.Book;
 import com.example.poo2bookproject.repository.BookRepository;
@@ -16,10 +17,14 @@ public class BookService {
     @Autowired
     private BookRepository br;
 
-    public ArrayList<Book> getBooks() {
-        ArrayList<Book> books = new ArrayList<>(br.getBooks().values());
+    public List<Book> getBooks() {
+        List<Book> books = new ArrayList<>(br.getBooks());
 
         return books;
+    }
+
+    public void getBook(Book book){
+        br.getBook(book);
     }
 
 }

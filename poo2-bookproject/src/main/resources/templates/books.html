@@ -6,25 +6,41 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Código</th>
-                <th scope="col">Título</th>
-                <th scope="col">Gênero</th>
-                <th scope="col">Autor(a)</th>
-                <th scope="col">Valor (R$)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="book: ${books}">
-                <td th:text="${book.codigo}"></td>
-                <td th:text="${book.titulo}"></td>
-                <td th:text="${book.genero}"></td>
-                <td th:text="${book.autor}"></td>
-                <td th:text="${book.preco}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="book-form">
+        <form th:action="@{/book}" method="POST">
+            <input type="hidden" name="codigo" value="0"><br /><br />
+            <label>Título</label>
+            <input type="text" name="titulo"><br /><br />
+            <label>Gênero</label>
+            <input type="text" name="genero"><br /><br />
+            <label>Autor(a)</label>
+            <input type="text" name="autor"><br /><br />
+            <label>Preço</label>
+            <input type="text" name="preco"><br /><br />
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+    <div id="book-list">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Gênero</th>
+                    <th scope="col">Autor(a)</th>
+                    <th scope="col">Valor (R$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book: ${books}">
+                    <td th:text="${book.codigo}"></td>
+                    <td th:text="${book.titulo}"></td>
+                    <td th:text="${book.genero}"></td>
+                    <td th:text="${book.autor}"></td>
+                    <td th:text="${book.preco}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
