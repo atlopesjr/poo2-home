@@ -28,8 +28,8 @@ public class BookController {
     }
 
     @PostMapping("")
-    public ModelAndView getBook(@ModelAttribute Book book){
-        bs.getBook(book);
+    public ModelAndView insertBook(@ModelAttribute Book book){
+        bs.insertBook(book);
         return new ModelAndView("redirect:/book");
     }
 }

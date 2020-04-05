@@ -23,8 +23,8 @@ public class BookService {
         return books;
     }
 
-    public void getBook(Book book){
-        br.getBook(book);
+    public void insertBook(Book book){
+        br.insertBook(book);
     }
 
 }
